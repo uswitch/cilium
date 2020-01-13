@@ -164,7 +164,6 @@ Vagrant.configure(2) do |config|
                         user_mount_from = "~/" + user_mount_from
                     end
                 end
-                puts "Mounting host directory #{user_mount_from} as #{user_mount_to}"
                 config.vm.synced_folder "#{user_mount_from}", "#{user_mount_to}", type: mount_type
             end
         end
