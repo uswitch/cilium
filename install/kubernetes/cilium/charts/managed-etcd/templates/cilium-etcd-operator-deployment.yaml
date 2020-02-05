@@ -1,3 +1,6 @@
+#############################################
+### THERE WAS AN ERROR UPDATING THIS FILE ###
+#############################################
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -52,13 +55,13 @@ spec:
           value: "revision"
         - name: CILIUM_ETCD_META_ETCD_AUTO_COMPACTION_RETENTION
           value: "25000"
-{{- if contains "/" .Values.image }}
+##{{- if contains "/" .Values.image }}
         image: "{{ .Values.image }}"
-{{- else if .Values.registry }}
+##{{- else if .Values.registry }}
         image: "{{ .Values.registry }}/{{ .Values.image }}:{{ .Values.tag }}"
-{{- else }}
+##{{- else }}
         image: "{{ .Values.global.registry }}/{{ .Values.image }}:{{ .Values.tag }}"
-{{- end }}
+##{{- end }}
         imagePullPolicy: {{ .Values.global.pullPolicy }}
         name: cilium-etcd-operator
       dnsPolicy: ClusterFirst
