@@ -28,7 +28,7 @@ spec:
     spec:
       containers:
       - name: rebel-base
-        image: docker.io/nginx:1.15.8
+        image: registry.usw.co/docker.io/nginx:1.15.8
         volumeMounts:
           - name: html
             mountPath: /usr/share/nginx/html/
@@ -72,7 +72,7 @@ spec:
     spec:
       containers:
       - name: x-wing-container
-        image: docker.io/cilium/json-mock:1.0
+        image: registry.usw.co/docker.io/cilium/json-mock:1.0
         livenessProbe:
           exec:
             command:
